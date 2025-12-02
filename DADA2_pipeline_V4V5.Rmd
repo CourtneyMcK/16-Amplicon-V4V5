@@ -4,16 +4,6 @@ author: "Courtney McKellar"
 date: "2025-11-02"
 output: html_document
 ---
-#Notes needed for thesis
-#used DADA2-version 1.36.0
-#used R-version 4.5.1
-#used R Studio-version 2025.09.0+387
-#used Figaro-version 1.1.2 to help assist where to trim
-#in Figaro, used in Docker, set the amplicon length to 381 (based on highest variation of amplicon minus primers-see paper for variation length https://doi.org/10.3389/fmars.2023.1199116), forward primer length to 19, reverse primer length to 20 (IMR V4V5) and minimum overlap to 50 bases (based on 20 + amplicon variability =30, as stated in DADA2 tutorial)
-#Figaro gave me the outcomes truncLen = c(245,225), and maxEE = c(1,1); got an outcome where 96% of the reads remained after trimming
-#all reads has a Q score of over 30 throughout the 300bp reads for both forward and reverse
-#did 2x300 sequencing with MiSeq
-#have the raw sequencing files saved in a OneDrive folder in case
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -294,7 +284,6 @@ view(taxa_DADA2_import)
 library(phyloseq)
 library(Biostrings)
 library(ggplot2)
-library(Polychrome)
 library(tidyverse)
 ```
 
@@ -1093,6 +1082,7 @@ ggsave("boom_PEG_genus_plot_top30adjusted.png", plot = last_plot(), width = 13, 
 ```
 
 ##end of code
+
 
 
 
