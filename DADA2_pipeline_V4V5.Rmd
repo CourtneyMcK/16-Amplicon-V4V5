@@ -1092,15 +1092,8 @@ strip.background = element_rect(fill = "grey85", color = NA)
 ggsave("boom_PEG_genus_plot_top30adjusted.png", plot = last_plot(), width = 13, height = 6, dpi = 300)
 ```
 
-physeq_merge.prune <- prune_taxa(taxa_sums(physeq_merge) > 1, physeq_merge)
-otu.rare <- otu_table(physeq_merge.prune)
-otu.rare <- as.data.frame(t(otu.rare))
-sample_names <- rownames(otu.rare)
-otu.rarecurve <- rarecurve(otu.rare, step = 10000, label = T)
-
-
-
 ##end of code
+
 
 
 
