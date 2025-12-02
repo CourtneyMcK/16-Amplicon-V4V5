@@ -363,8 +363,8 @@ desired_date_order <- c("25-Feb", "16-Jul")
 
 #Now we want to look at the relative abundance of the phyla level in the samples 
 #We need to glom together taxa in the phyla column so we can graph them together.
-#then, we can take the relative abundance, will do for all samples, but will only plot the top 20/30 (meaning that the total relative abundance will not equal 100%)
-#this will only plot the top 20/30 phyla
+#then, we can take the relative abundance, will do for all samples
+#this will only plot the top 20/30 phyla; any other phyla not in the top 20/30 will be put in other
 ```{r}
 ps_phylum <- tax_glom(physeq_merge, "Phylum")
 ps_phylum_relabun <- transform_sample_counts(ps_phylum, function(ASV) ASV / sum(ASV) * 100)
@@ -604,8 +604,8 @@ ggsave("boom_PEG_phylum_plot_top30adjusted.png", plot = last_plot(), width = 13,
 
 #Now we want to look at the relative abundance of the family level in the samples 
 #We need to glom together taxa in the family column so we can graph them together.
-#then, we can take the relative abundance, will do for all samples, but will only plot the top 20/30 (meaning that the total relative abundance will not equal 100%)
-#this will only plot the top 20/30 family
+#then, we can take the relative abundance, will do for all samples
+#this will only plot the top 20/30 families; any other families not in the top 20/30 will be put in other
 ```{r}
 ps_family <- tax_glom(physeq_merge, "Family")
 ps_family_relabun <- transform_sample_counts(ps_family, function(ASV) ASV / sum(ASV) * 100)
@@ -845,8 +845,8 @@ ggsave("boom_PEG_family_plot_top30adjusted.png", plot = last_plot(), width = 13,
 
 #Now we want to look at the relative abundance of the genus level in the samples 
 #We need to glom together taxa in the genus column so we can graph them together.
-#then, we can take the relative abundance, will do for all samples, but will only plot the top 20/30 (meaning that the total relative abundance will not equal 100%)
-#this will only plot the top 20/30 genus
+#then, we can take the relative abundance, will do for all samples
+#this will only plot the top 20/30 genera; any other genera not in the top 20/30 will be put in other
 ```{r}
 ps_genus <- tax_glom(physeq_merge, "Genus")
 ps_genus_relabun <- transform_sample_counts(ps_genus, function(ASV) ASV / sum(ASV) * 100)
@@ -1082,6 +1082,7 @@ ggsave("boom_PEG_genus_plot_top30adjusted.png", plot = last_plot(), width = 13, 
 ```
 
 ##end of code
+
 
 
 
